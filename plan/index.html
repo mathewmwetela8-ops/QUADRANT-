@@ -1,0 +1,362 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quadrant 2027 Plan Summary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400..800&family=Inter:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0;height:100%;background:#0B3C49;overflow:hidden}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0}
+#stage>section{position:absolute;inset:0;width:1920px;height:1080px;display:none}
+#stage>section.on{display:flex}
+#stage{counter-reset:page}
+:root{--deep:#0B3C49;--deep2:#134E5E;--sea:#7FB7BE;--sun:#F2A541;--paper:#F6F4EF;--seatint:#E4F1F2;--suntint:#FDF0DB;--ink:#14303A;--muted:#56707A;--line:#D9E3E5;--rust:#9A5B1E}
+body{font-family:'Inter',Arial,sans-serif;color:#14303A}
+section{counter-increment:page;box-sizing:border-box;padding:128px 128px 160px;background:#F6F4EF;color:#14303A;display:flex;flex-direction:column;gap:44px;font-family:'Inter',Arial,sans-serif}
+section.dark{background:#0B3C49;color:#E4F1F2}
+section.sun{background:#F2A541;color:#0B3C49}
+h1,h2,h3{font-family:'Sora',Arial,sans-serif;color:#0B3C49;margin:0}
+h1{font-size:120px;font-weight:700;line-height:1.02}
+h2{font-size:64px;font-weight:700;line-height:1.1}
+h3{font-size:36px;font-weight:700;line-height:1.2}
+p{font-size:30px;line-height:1.4;margin:0}
+.dark h1,.dark h2,.dark h3{color:#FFFFFF}
+.head{display:flex;flex-direction:column;gap:16px}
+.eyebrow{font-size:24px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#9A5B1E}
+.dark .eyebrow{color:#F2A541}
+.sun .eyebrow{color:#0B3C49}
+.lead{font-size:34px;line-height:1.4;color:#14303A;width:1400px}
+.dark .lead{color:#CFE3E5}
+.muted{color:#56707A}
+.small{font-size:24px;line-height:1.4}
+.foot{position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between;align-items:center}
+.foot p{font-size:24px;color:#56707A;letter-spacing:2px}
+.dark .foot p{color:#9FC3C8}
+.pg::after{content:counter(page)}
+.row{display:flex;gap:32px}
+.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:28px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.card{background:#FFFFFF;border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:14px;border:2px solid #D9E3E5}
+.card p{font-size:26px;line-height:1.4;color:#14303A}
+.card .lbl{font-size:24px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#56707A}
+.card.sea{background:#E4F1F2;border-color:#E4F1F2}
+.card.sunt{background:#FDF0DB;border-color:#FDF0DB}
+.card.deep{background:#0B3C49;border-color:#0B3C49}
+.card.deep h3{color:#FFFFFF}
+.card.deep p{color:#CFE3E5}
+.card.deep .lbl{color:#F2A541}
+.stat{font-family:'Sora',Arial,sans-serif;font-size:88px;font-weight:700;line-height:1;color:#0B3C49}
+.dark .stat{color:#FFFFFF}
+.unit{font-family:'Sora',Arial,sans-serif;font-size:30px;font-weight:600;color:#56707A}
+.dark .unit{color:#7FB7BE}
+.statcard{display:flex;flex-direction:column;gap:18px;border-top:6px solid #7FB7BE;padding-top:28px}
+.statcard p{font-size:26px;color:#CFE3E5;line-height:1.4}
+.bar{height:12px;border-radius:6px;background:#7FB7BE}
+table{font-size:26px;color:#14303A;width:100%}
+.dark table{color:#E4F1F2}
+.pill{font-size:24px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 20px;border-radius:40px;background:#0B3C49;color:#FFFFFF}
+.rise{animation:rise .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 110ms)}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.fadein{animation:fadein .8s ease both;animation-delay:calc(var(--i,0) * 110ms)}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.grow{animation:grow .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 120ms);transform-origin:left center}
+@keyframes grow{from{opacity:0;transform:scaleX(0.05)}to{opacity:1;transform:scaleX(1)}}
+.month{border-radius:16px;padding:24px 26px;display:flex;flex-direction:column;gap:8px;background:#FFFFFF;border:2px solid #D9E3E5}
+.month .mn{font-family:'Sora',Arial,sans-serif;font-size:30px;font-weight:700;color:#0B3C49}
+.month .mt{font-size:24px;line-height:1.3;color:#14303A}
+.qlabel{font-family:'Sora',Arial,sans-serif;font-size:26px;font-weight:800;letter-spacing:3px;color:#9A5B1E}
+.tick{display:flex;gap:18px;align-items:flex-start}
+.tick p{font-size:28px;line-height:1.35}
+.dot{width:22px;height:22px;border-radius:11px;background:#F2A541;margin-top:10px;flex:none}
+.dot.sea{background:#7FB7BE}
+.dot.deep{background:#0B3C49}
+.lvl{font-size:24px;font-weight:700;padding:6px 16px;border-radius:30px;background:#F3D2C9;color:#7A2E1C}
+.lvl.m{background:#FDF0DB;color:#7A4A12}
+.statcard .stat,.card .stat{font-family:'Sora',Arial,sans-serif;font-size:88px;font-weight:700;line-height:1;color:#0B3C49}
+.dark .statcard .stat,.card.deep .stat{color:#FFFFFF}
+.card .qlabel{font-family:'Sora',Arial,sans-serif;font-size:26px;font-weight:800;letter-spacing:3px;color:#9A5B1E}
+
+#stage>section{counter-increment:none}
+#stage table{border-collapse:collapse} #stage th{font-weight:700;padding:12px 18px;border-bottom:3px solid #0B3C49} #stage td{padding:12px 18px;border-bottom:2px solid #D9E3E5}
+.nav{position:fixed;bottom:14px;right:16px;display:flex;gap:8px;z-index:5;font:600 14px Inter,Arial,sans-serif}
+.nav button{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:8px 14px;cursor:pointer;font:inherit}
+.nav span{color:#cfe3e5;padding:8px 6px}
+.prog{position:fixed;left:0;top:0;height:4px;background:#F2A541;z-index:5;transition:width .3s}
+</style></head><body>
+<div class="prog" id="prog"></div>
+<div id="stage"><section id="cover" class="dark" style="padding:128px;justify-content:space-between" data-transition="fade">
+<div class="row fadein" style="align-items:center;gap:24px">
+<svg aria-label="Quadrant logo" width="64" height="64" viewBox="0 0 64 64"><rect x="3" y="3" width="28" height="28" rx="4" fill="#7FB7BE"/><rect x="33" y="3" width="28" height="28" rx="4" fill="#F2A541"/><rect x="3" y="33" width="28" height="28" rx="4" fill="#FFFFFF"/><rect x="33.8" y="33.8" width="26.4" height="26.4" rx="3.6" fill="#0B3C49" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="1.6"/><circle cx="32" cy="32" r="9.5" fill="#FFFFFF" stroke="#0B3C49" stroke-width="3.5"/></svg>
+<p style="font-family:'Sora',Arial,sans-serif;font-size:36px;font-weight:700;letter-spacing:4px;color:#FFFFFF">QUADRANT</p>
+</div>
+<div class="head" style="width:1200px">
+<p class="eyebrow rise" style="--i:1">Year one · 1 January to 31 December 2027</p>
+<h1 class="rise" style="--i:2">12-month operational plan</h1>
+<p class="lead rise" style="--i:3;width:1100px">Open the doors, win the first clients, and prove the Quadrant promise at claim time.</p>
+</div>
+<div class="row" style="justify-content:space-between;align-items:flex-end">
+<p class="small" style="color:#9FC3C8">Summary for the founders · Draft 1 · November 2026</p>
+<p style="font-family:'Sora',Arial,sans-serif;font-size:30px;font-weight:600;color:#7FB7BE">Every angle covered.</p>
+</div>
+
+</section>
+<section id="glance" class="dark">
+<div class="head">
+<p class="eyebrow">Year one at a glance</p>
+<h2>One job: build a profitable, compliant book on the strength of service</h2>
+</div>
+<p class="lead">Quadrant opens on 1 January 2027 as a PIA-licensed broker with four services: Motor (the priority), Family funeral, Liabilities and Property.</p>
+<div class="grid4" style="margin-top:12px">
+<div class="statcard rise" style="--i:1"><p class="stat">15<span class="unit"> m ZMW</span></p><p>premium placed with insurers in 2027</p></div>
+<div class="statcard rise" style="--i:2;border-top-color:#F2A541"><p class="stat">2.25<span class="unit"> m ZMW</span></p><p>commission earned, about 15% of premium</p></div>
+<div class="statcard rise" style="--i:3"><p class="stat">650</p><p>clients by December, plus 2,000 lives on funeral cover</p></div>
+<div class="statcard rise" style="--i:4;border-top-color:#F2A541"><p class="stat">2.7<span class="unit"> m ZMW</span></p><p>shareholder funding for year one, with a 3-month buffer</p></div>
+</div>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="start">
+<div class="head">
+<p class="eyebrow">Starting point</p>
+<h2>The brand is ready. Six weeks to open the doors.</h2>
+</div>
+<div class="grid2" style="flex:1">
+<div class="card sea rise" style="--i:1">
+<p class="lbl">Already in place</p>
+<div class="tick"><div class="dot sea"></div><p>Name, logo and the Client Centre model</p></div>
+<div class="tick"><div class="dot sea"></div><p>Website live, plus profile, brochures and videos</p></div>
+<div class="tick"><div class="dot sea"></div><p>Values and a six-point Client Charter</p></div>
+<div class="tick"><div class="dot sea"></div><p>Four founders with insurance and marketing skills</p></div>
+<div class="tick"><div class="dot sea"></div><p>A fleet lead of about 62 vehicles</p></div>
+</div>
+<div class="card sunt rise" style="--i:2">
+<p class="lbl">Must be done before 1 January</p>
+<div class="tick"><div class="dot"></div><p>PIA broker licence in force</p></div>
+<div class="tick"><div class="dot"></div><p>Shareholder capital paid in</p></div>
+<div class="tick"><div class="dot"></div><p>Operating and client premium bank accounts</p></div>
+<div class="tick"><div class="dot"></div><p>Terms signed with at least 3 insurers</p></div>
+<div class="tick"><div class="dot"></div><p>Office, first four staff, vehicle, PI cover</p></div>
+</div>
+</div>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="phases">
+<div class="head">
+<p class="eyebrow">The year in four phases</p>
+<h2>Open, build, scale, then consolidate</h2>
+</div>
+<div class="grid4" style="flex:1">
+<div class="card sea rise" style="--i:1"><p class="qlabel">Q1 · JAN–MAR</p><h3>Open and launch</h3><p>Sign insurers, place the fleet lead, hold the launch in February, get every process working.</p></div>
+<div class="card sunt rise" style="--i:2"><p class="qlabel">Q2 · APR–JUN</p><h3>Build the book</h3><p>Launch Family funeral group schemes, go live on a broker system, push liabilities and property to SMEs.</p></div>
+<div class="card rise" style="--i:3"><p class="qlabel">Q3 · JUL–SEP</p><h3>Scale and diversify</h3><p>Add a commercial executive and a claims officer, exhibit at the Lusaka Show, widen motor.</p></div>
+<div class="card deep rise" style="--i:4"><p class="lbl">Q4 · OCT–DEC</p><h3>Consolidate and renew</h3><p>Reach monthly break-even, prepare the first renewals, approve the 2028 plan.</p></div>
+</div>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="priorities">
+<div class="head">
+<p class="eyebrow">Five priorities for 2027</p>
+<h2>What success looks like by December</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:0">
+<div class="row rise" style="--i:1;gap:40px;padding:22px 0;border-top:3px solid #0B3C49;align-items:baseline"><p class="qlabel" style="width:60px">01</p><h3 style="width:520px">Lead with Motor</h3><p style="width:1000px">About 600 vehicles insured, and the 62-vehicle fleet lead placed by the end of February.</p></div>
+<div class="row rise" style="--i:2;gap:40px;padding:22px 0;border-top:2px solid #D9E3E5;align-items:baseline"><p class="qlabel" style="width:60px">02</p><h3 style="width:520px">Build a strong insurer panel</h3><p style="width:1000px">Terms with 7 to 8 PIA-licensed insurers, chosen on claims record first and price second.</p></div>
+<div class="row rise" style="--i:3;gap:40px;padding:22px 0;border-top:2px solid #D9E3E5;align-items:baseline"><p class="qlabel" style="width:60px">03</p><h3 style="width:520px">Prove the Client Charter</h3><p style="width:1000px">95% of enquiries answered within a working day; every claim reported the same day.</p></div>
+<div class="row rise" style="--i:4;gap:40px;padding:22px 0;border-top:2px solid #D9E3E5;align-items:baseline"><p class="qlabel" style="width:60px">04</p><h3 style="width:520px">Stay fully compliant</h3><p style="width:1000px">Every return on time, client premiums in a separate account, no adverse findings.</p></div>
+<div class="row rise" style="--i:5;gap:40px;padding:22px 0;border-top:2px solid #D9E3E5;align-items:baseline"><p class="qlabel" style="width:60px">05</p><h3 style="width:520px">Reach break-even</h3><p style="width:1000px">Monthly commission earned covers monthly costs from November 2027.</p></div>
+</div>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="months">
+<div class="head">
+<p class="eyebrow">Month by month</p>
+<h2>Twelve months, twelve themes</h2>
+</div>
+<div class="grid4" style="gap:28px">
+<div style="display:flex;flex-direction:column;gap:16px;--i:1" class="rise">
+<p class="qlabel">Q1</p>
+<div class="month" style="border-color:#7FB7BE"><p class="mn">January</p><p class="mt">Open the doors: staff, insurers, systems</p></div>
+<div class="month" style="border-color:#7FB7BE"><p class="mn">February</p><p class="mt">Launch event; place the fleet</p></div>
+<div class="month" style="border-color:#7FB7BE"><p class="mn">March</p><p class="mt">Dealers and banks; first quarter close</p></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;--i:2" class="rise">
+<p class="qlabel">Q2</p>
+<div class="month" style="border-color:#F2A541"><p class="mn">April</p><p class="mt">Family funeral launch; broker system live</p></div>
+<div class="month" style="border-color:#F2A541"><p class="mn">May</p><p class="mt">SME push; radio wave 1</p></div>
+<div class="month" style="border-color:#F2A541"><p class="mn">June</p><p class="mt">Half-year review and re-forecast</p></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;--i:3" class="rise">
+<p class="qlabel">Q3</p>
+<div class="month"><p class="mn">July</p><p class="mt">Commercial executive starts; fleet risk service</p></div>
+<div class="month"><p class="mn">August</p><p class="mt">Lusaka Agricultural and Commercial Show</p></div>
+<div class="month"><p class="mn">September</p><p class="mt">Second claims officer; claims review</p></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;--i:4" class="rise">
+<p class="qlabel">Q4</p>
+<div class="month" style="border-color:#0B3C49"><p class="mn">October</p><p class="mt">Rainy-season readiness; 2028 budget</p></div>
+<div class="month" style="border-color:#0B3C49"><p class="mn">November</p><p class="mt">Renewal reviews; road-safety campaign</p></div>
+<div class="month" style="border-color:#0B3C49"><p class="mn">December</p><p class="mt">Close the year; 2028 plan approved</p></div>
+</div>
+</div>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="kpis">
+<div class="head">
+<p class="eyebrow">Milestones and KPIs</p>
+<h2>Quarterly gates, measured the way clients judge us</h2>
+</div>
+<table class="fadein" style="font-size:28px">
+<tr><th style="width:52%;text-align:left">End of quarter</th><th style="text-align:right">Q1</th><th style="text-align:right">Q2</th><th style="text-align:right">Q3</th><th style="text-align:right">Q4</th></tr>
+<tr><td>Premium placed, cumulative (ZMW)</td><td style="text-align:right">1.92m</td><td style="text-align:right">5.4m</td><td style="text-align:right">9.87m</td><td style="text-align:right">15m</td></tr>
+<tr><td>Clients, cumulative</td><td style="text-align:right">60</td><td style="text-align:right">220</td><td style="text-align:right">420</td><td style="text-align:right">650</td></tr>
+<tr><td>Vehicles insured</td><td style="text-align:right">150</td><td style="text-align:right">290</td><td style="text-align:right">440</td><td style="text-align:right">600</td></tr>
+<tr><td>Lives on funeral cover</td><td style="text-align:right">0</td><td style="text-align:right">500</td><td style="text-align:right">1,200</td><td style="text-align:right">2,000</td></tr>
+<tr><td>Insurers with signed terms</td><td style="text-align:right">5</td><td style="text-align:right">7</td><td style="text-align:right">8</td><td style="text-align:right">8</td></tr>
+<tr><td>Enquiries answered within 1 working day</td><td style="text-align:right">95%</td><td style="text-align:right">95%</td><td style="text-align:right">95%</td><td style="text-align:right">95%</td></tr>
+<tr><td>Claims reported to insurer the same day</td><td style="text-align:right">100%</td><td style="text-align:right">100%</td><td style="text-align:right">100%</td><td style="text-align:right">100%</td></tr>
+<tr><td>Regulatory returns on time</td><td style="text-align:right">100%</td><td style="text-align:right">100%</td><td style="text-align:right">100%</td><td style="text-align:right">100%</td></tr>
+</table>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="sales">
+<div class="head">
+<p class="eyebrow">Sales and marketing</p>
+<h2>Motor first, then the whole picture</h2>
+</div>
+<div class="row" style="gap:64px;flex:1">
+<div style="display:flex;flex-direction:column;gap:30px;width:1000px">
+<p class="small muted">2027 premium placed, by service (ZMW)</p>
+<div style="display:flex;flex-direction:column;gap:10px"><div class="row" style="justify-content:space-between"><p><b>Motor</b> · about 600 vehicles</p><p><b>9m</b></p></div><div class="bar grow" style="width:1000px;--i:1"></div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div class="row" style="justify-content:space-between;width:400px"><p><b>Property</b></p><p><b>3m</b></p></div><div class="bar grow" style="width:333px;background:#0B3C49;--i:2"></div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div class="row" style="justify-content:space-between;width:400px"><p><b>Liabilities</b></p><p><b>1.5m</b></p></div><div class="bar grow" style="width:167px;background:#56707A;--i:3"></div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div class="row" style="justify-content:space-between;width:400px"><p><b>Family funeral</b></p><p><b>1.5m</b></p></div><div class="bar grow" style="width:167px;background:#F2A541;--i:4"></div></div>
+<p class="small muted">Channels: direct sales, dealers and banks, associations and churches, WhatsApp and social media, radio, the launch and the Lusaka Show.</p>
+</div>
+<div class="card deep rise" style="--i:3;width:600px">
+<p class="lbl">First reference client</p>
+<h3>The fleet lead</h3>
+<p>About 62 vehicles, 40 already identified. Compare at least four insurers in January and bind cover by 28 February.</p>
+<p>Worth about ZMW 1.1m in premium and ZMW 140k in commission a year. Then offer liability, property and a staff funeral scheme.</p>
+</div>
+</div>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="team">
+<div class="head">
+<p class="eyebrow">People</p>
+<h2>A lean team that grows with the book</h2>
+</div>
+<div class="grid4">
+<div class="card rise" style="--i:1"><p class="lbl">Managing Director</p><p>Licence, PIA, board, senior insurer relationships, largest clients</p></div>
+<div class="card rise" style="--i:2"><p class="lbl">Technical and Claims</p><p>Insurer panel, placing, wordings, claims advocacy</p></div>
+<div class="card rise" style="--i:3"><p class="lbl">Marketing and Client Experience</p><p>Brand, campaigns, referral partners, the Client Charter</p></div>
+<div class="card rise" style="--i:4"><p class="lbl">Operations and Programmes</p><p>Office, people, systems, finance, compliance, this plan</p></div>
+</div>
+<div class="grid4" style="gap:28px">
+<div class="statcard fadein" style="--i:5;border-top-color:#0B3C49"><p class="stat" style="font-size:72px">8</p><p style="color:#14303A">January: 4 founders, account executive, claims officer, finance and compliance officer, administrator</p></div>
+<div class="statcard fadein" style="--i:6;border-top-color:#7FB7BE"><p class="stat" style="font-size:72px">10</p><p style="color:#14303A">April: driver and messenger (Feb), Family and group schemes executive</p></div>
+<div class="statcard fadein" style="--i:7;border-top-color:#F2A541"><p class="stat" style="font-size:72px">11</p><p style="color:#14303A">July: Commercial executive for liabilities and property</p></div>
+<div class="statcard fadein" style="--i:8;border-top-color:#56707A"><p class="stat" style="font-size:72px">12</p><p style="color:#14303A">September: second claims and client service officer</p></div>
+</div>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="trust" class="dark">
+<div class="head">
+<p class="eyebrow">Insurers, compliance and claims</p>
+<h2>Trust and reliability, built into the routine</h2>
+</div>
+<div class="grid3" style="flex:1">
+<div class="statcard rise" style="--i:1"><h3>Insurer panel</h3><p>5 PIA-licensed insurers by 31 January, 7 to 8 by May. Chosen on claims record first (30%), then strength, product fit, service and terms.</p><p>Performance reviews in May, August and November.</p></div>
+<div class="statcard rise" style="--i:2;border-top-color:#F2A541"><h3>Compliance</h3><p>Client premiums in a separate account, two signatories, reconciled monthly.</p><p>AML, data protection and complaints policies from January. Every PIA return on time.</p></div>
+<div class="statcard rise" style="--i:3"><h3>Claims</h3><p>Reported to the insurer the same working day. Weekly updates until settlement.</p><p>Escalation after 5 working days. Rainy-season and festive readiness every year.</p></div>
+</div>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="budget">
+<div class="head">
+<p class="eyebrow">Indicative budget</p>
+<h2>A first-year loss, then break-even by November</h2>
+</div>
+<div class="row" style="gap:80px;flex:1;align-items:stretch">
+<div style="display:flex;flex-direction:column;gap:18px;width:860px">
+<p class="small muted">Commission earned vs operating costs, by quarter (ZMW thousands)</p>
+<div class="row" style="gap:56px;align-items:flex-end;height:420px;border-bottom:3px solid #0B3C49">
+<div class="row" style="gap:10px;align-items:flex-end;width:160px"><div class="fadein" style="--i:1;width:72px;height:119px;background:#7FB7BE;border-radius:8px 8px 0 0"></div><div class="fadein" style="--i:1;width:72px;height:400px;background:#0B3C49;border-radius:8px 8px 0 0"></div></div>
+<div class="row" style="gap:10px;align-items:flex-end;width:160px"><div class="fadein" style="--i:2;width:72px;height:233px;background:#7FB7BE;border-radius:8px 8px 0 0"></div><div class="fadein" style="--i:2;width:72px;height:327px;background:#0B3C49;border-radius:8px 8px 0 0"></div></div>
+<div class="row" style="gap:10px;align-items:flex-end;width:160px"><div class="fadein" style="--i:3;width:72px;height:301px;background:#7FB7BE;border-radius:8px 8px 0 0"></div><div class="fadein" style="--i:3;width:72px;height:348px;background:#0B3C49;border-radius:8px 8px 0 0"></div></div>
+<div class="row" style="gap:10px;align-items:flex-end;width:160px"><div class="fadein" style="--i:4;width:72px;height:346px;background:#7FB7BE;border-radius:8px 8px 0 0"></div><div class="fadein" style="--i:4;width:72px;height:354px;background:#0B3C49;border-radius:8px 8px 0 0"></div></div>
+</div>
+<div class="row" style="gap:56px"><p class="small" style="width:160px">Q1<br>268 / 901</p><p class="small" style="width:160px">Q2<br>525 / 737</p><p class="small" style="width:160px">Q3<br>679 / 783</p><p class="small" style="width:160px">Q4<br>779 / 797</p></div>
+<div class="row" style="gap:32px;align-items:center"><div style="width:24px;height:24px;background:#7FB7BE;border-radius:4px"></div><p class="small">Commission earned</p><div style="width:24px;height:24px;background:#0B3C49;border-radius:4px"></div><p class="small">Operating costs</p></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;width:724px">
+<div class="card rise" style="--i:2"><p class="lbl">2027 result</p><p><b>2.25m</b> commission vs <b>3.22m</b> costs: a <b>0.97m</b> loss, normal for a new broker.</p></div>
+<div class="card rise" style="--i:3"><p class="lbl">Set-up spend</p><p><b>670k</b>: office fit-out, laptops and phones, solar back-up, a used company vehicle.</p></div>
+<div class="card deep rise" style="--i:4"><p class="lbl">Shareholder funding</p><p class="stat" style="font-size:60px;color:#FFFFFF">2.7<span class="unit"> m ZMW</span></p><p>3.3m if premium comes in 30% below plan. Excludes tax and any PIA capital requirement.</p></div>
+</div>
+</div>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="risks">
+<div class="head">
+<p class="eyebrow">Risks</p>
+<h2>What could knock the plan off course</h2>
+</div>
+<table class="fadein" style="font-size:27px">
+<tr><th style="width:36%;text-align:left">Risk</th><th style="width:14%;text-align:left">Impact</th><th style="text-align:left">Mitigation</th></tr>
+<tr><td>PIA licence not in force by 1 January</td><td>High</td><td>Weekly follow-up; no business placed until licensed</td></tr>
+<tr><td>Insurers slow to sign, or weak terms</td><td>High</td><td>Approach 8 to land 5; use the founders’ relationships</td></tr>
+<tr><td>Fleet lead delayed or lost</td><td>High</td><td>Engage in December; pipeline of 10 other fleets</td></tr>
+<tr><td>Sales grow slower than planned</td><td>High</td><td>Hold hiring and marketing at each gate; downside funding identified</td></tr>
+<tr><td>Insurers delay or dispute claims</td><td>High</td><td>Choose on claims record; escalate; move business at renewal</td></tr>
+<tr><td>Load-shedding and connectivity</td><td>Medium</td><td>Solar and battery back-up; cloud systems</td></tr>
+<tr><td>Kwacha and repair-cost inflation</td><td>Medium</td><td>Sum-insured reviews in October; 10% budget contingency</td></tr>
+</table>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="decisions">
+<div class="head">
+<p class="eyebrow">Decisions needed before 15 December 2026</p>
+<h2>Six calls the founders make now</h2>
+</div>
+<div class="grid3" style="flex:1">
+<div class="card sunt rise" style="--i:1"><p class="qlabel">01</p><h3>Licence date</h3><p>Confirm the PIA licence will be in force by 1 January.</p></div>
+<div class="card sunt rise" style="--i:2"><p class="qlabel">02</p><h3>Funding</h3><p>Agree about ZMW 2.7m of shareholder funding, and when it is paid.</p></div>
+<div class="card sunt rise" style="--i:3"><p class="qlabel">03</p><h3>Founder pay</h3><p>The plan assumes ZMW 15,000 per founder per month.</p></div>
+<div class="card rise" style="--i:4"><p class="qlabel">04</p><h3>Vehicle</h3><p>Buy a used vehicle for ZMW 300,000, or lease.</p></div>
+<div class="card rise" style="--i:5"><p class="qlabel">05</p><h3>First insurers</h3><p>Shortlist eight to approach, to sign five by 31 January.</p></div>
+<div class="card rise" style="--i:6"><p class="qlabel">06</p><h3>Office</h3><p>Choose the Lusaka location; the address goes on every document.</p></div>
+</div>
+<div class="foot"><p>QUADRANT · 2027 operational plan</p><p class="pg"></p></div>
+
+</section>
+<section id="close" class="sun" style="padding:128px;justify-content:center;gap:40px">
+<p class="eyebrow fadein">Quadrant Insurance Brokers</p>
+<h1 class="rise" style="--i:1;width:1500px">You at the centre. Every angle covered.</h1>
+<p class="lead rise" style="--i:2;width:1300px;color:#0B3C49">Doors open 1 January 2027. The full plan, Gantt timeline and budget workbook have every detail behind this summary.</p>
+
+</section>
+</div>
+<div class="nav"><button id="prev" aria-label="Previous slide">&#8592;</button><span id="count"></span><button id="next" aria-label="Next slide">&#8594;</button></div>
+<script>
+const S=[...document.querySelectorAll('#stage>section')];let i=0;
+S.forEach((s,k)=>{const p=s.querySelector('.pg');if(p){p.classList.remove('pg');p.textContent=k+1;}});
+function fit(){const st=document.getElementById('stage');const k=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform=`scale(${k}) translate(-50%,-50%)`;st.style.transformOrigin='0 0';st.style.left='50%';st.style.top='50%';st.style.transform=`translate(-50%,-50%) scale(${k})`;st.style.transformOrigin='center center';st.style.marginLeft='0';}
+function show(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle('on',k===i));document.getElementById('count').textContent=(i+1)+' / '+S.length;document.getElementById('prog').style.width=((i+1)/S.length*100)+'%';history.replaceState(null,'','#'+(i+1));}
+addEventListener('resize',fit);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}if(['ArrowLeft','PageUp'].includes(e.key))show(i-1);if(e.key==='Home')show(0);if(e.key==='End')show(S.length-1)});
+document.getElementById('next').onclick=()=>show(i+1);document.getElementById('prev').onclick=()=>show(i-1);
+let x0=null;addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40)show(i+(d<0?1:-1));x0=null});
+document.getElementById('stage').addEventListener('click',e=>{show(e.clientX>innerWidth/2?i+1:i-1)});
+fit();show(Math.max(0,(parseInt(location.hash.slice(1))||1)-1));
+</script></body></html>
